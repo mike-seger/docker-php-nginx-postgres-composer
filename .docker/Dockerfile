@@ -1,4 +1,5 @@
-FROM php:7.1-fpm
+FROM php:5.6-fpm
+#FROM php:7.1-fpm
 
 MAINTAINER Descamps Antoine <antoine.descamps@ineat-conseil.fr>
 
@@ -11,8 +12,8 @@ RUN apt-get update && apt-get install -y \
         libpq-dev \
         libxpm-dev \
         libvpx-dev \
-    && pecl install xdebug \
-    && docker-php-ext-enable xdebug \
+#    && pecl install xdebug \
+#    && docker-php-ext-enable xdebug \
     && docker-php-ext-install -j$(nproc) mcrypt \
     && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install -j$(nproc) intl \
